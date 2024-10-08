@@ -21,7 +21,7 @@ export default function Add() {
     try {
       axios.post(
         `${import.meta.env.VITE_SERVER_URL}/categories`,
-        { ...data, file },
+        { ...data, image: file },
         {
           withCredentials: true,
         }

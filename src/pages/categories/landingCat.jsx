@@ -34,6 +34,7 @@ export default function Categories() {
           <tr>
             <th>#</th>
             <th>Category Name</th>
+            <th>Image</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -42,6 +43,7 @@ export default function Categories() {
             <tr key={category._id}>
               <td>{category._id}</td>
               <td>{category.title}</td>
+              <td>{category.image}</td>
               <td>
                 <button
                   className="btn btn-danger"
