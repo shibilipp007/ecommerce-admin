@@ -1,6 +1,10 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../features/login";
 
 export default function Sidebar() {
+  const dispatch = useDispatch();
+
   return (
     <div
       className="d-flex flex-column vh-100 bg-dark text-white p-3"
@@ -36,6 +40,17 @@ export default function Sidebar() {
           </ul>
         </div>
       </nav>
+      <div className="d-flex justify-content-end ">
+        <button
+          className="px-4 py-2 bg-primary"
+          onClick={() => {
+            dispatch(logout());
+            window.location.href = "/login";
+          }}
+        >
+          logOut
+        </button>
+      </div>
     </div>
   );
 }

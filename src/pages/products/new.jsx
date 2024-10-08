@@ -59,7 +59,7 @@ export default function New() {
 
   return (
     <div className="py-5 mb-5" style={{ width: 800, marginInline: "auto" }}>
-      <Button variant="dark" onClick={() => navigate("/")} className="mb-3">
+      <Button variant="dark" onClick={() => navigate(-1)} className="mb-3">
         Go back
       </Button>
       <h1 className="mb-5">Create a product</h1>

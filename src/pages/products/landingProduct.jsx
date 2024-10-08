@@ -39,6 +39,10 @@ export default function ProductList() {
     <div className="container py-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Products</h2>
+        <Button variant="dark" onClick={() => navigate("/")} className="mb-3">
+          Go back
+        </Button>
+
         {/* Add product button */}
         <Button variant="primary" onClick={() => navigate("/new")}>
           Add Product

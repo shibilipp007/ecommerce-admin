@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Button } from "react-bootstrap";
 import { AiOutlinePlus, AiOutlineDelete } from "react-icons/ai";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 export async function loader() {
   const response = await axios.get(
@@ -13,6 +13,7 @@ export async function loader() {
 
 export default function Categories() {
   const { categories } = useLoaderData();
+  const navigate = useNavigate();
 
   // Delete a category by id
   const deleteCategory = () => {};
@@ -22,6 +23,10 @@ export default function Categories() {
       {/* Header with Add Button */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Categories</h2>
+        <Button variant="dark" onClick={() => navigate(-1)} className="mb-3">
+          Go back
+        </Button>
+
         <Button as={Link} to={"/add"}>
           <AiOutlinePlus className="me-2" />
           Add Category
