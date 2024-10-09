@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { AiOutlinePlus, AiOutlineDelete } from "react-icons/ai";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
@@ -14,9 +15,20 @@ export async function loader() {
 export default function Categories() {
   const { categories } = useLoaderData();
   const navigate = useNavigate();
+  const [categoreis, setCategories] = useState();
 
   // Delete a category by id
-  const deleteCategory = () => {};
+  const deleteCategory = async (id) => {
+    try {
+      await axios.delete(
+        `${import.meta.env.VITE_SERVER_URL}/categoreis/${id}`,
+        { withCredentials: true }
+      );
+      setCategories(categoreis.filter((category) => category._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="container mt-4">

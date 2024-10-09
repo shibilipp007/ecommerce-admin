@@ -78,9 +78,9 @@ export default function ProductList() {
                   />
                 )}
               </td>
-              <td>${product.price}</td>
+              <td>&#8377;{product.price}</td>
               <td>{product.quantity}</td>
-              <td>{product.categories?.join(", ")}</td>
+              <td>{product.category}</td>
               <td>
                 {/* Edit and Delete buttons */}
                 <Button
